@@ -1,0 +1,43 @@
+.homes__slider-wrapper {
+  display: flex;
+}
+
+.homes__slide-image-item {
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.homes__slide-title {
+  font-size: 24px;
+  line-height: 117%;
+  color: var(--general-blue);
+}
+
+.homes__slide-subtitle {
+  font-size: 24px;
+  line-height: 117%;
+  color: var(--secondary-text);
+}
+.homes__slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.swiper-button-next {
+  padding: 20px;
+  z-index: 11;
+  right: -6px;
+}
+.swiper-button-prev {
+  display: none;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none;
+}
+.swiper {
+  position: unset;
+  height: 100%;
+}

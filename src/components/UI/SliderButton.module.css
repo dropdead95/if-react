@@ -1,0 +1,19 @@
+.wrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 48%;
+    left: calc(98% - 9px);
+    border-radius: 50%;
+    background-color: var(--general-white);
+    z-index: 10;
+    cursor: pointer;
+}
+.icon {
+    width: 9px;
+    height: 21px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

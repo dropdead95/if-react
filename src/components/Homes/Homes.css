@@ -1,0 +1,13 @@
+.homes {
+  background-color: #eaf0f9;
+  padding: 120px 0;
+}
+.homes__container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative;
+}
+.homes__title {
+  margin-bottom: 104px;
+}
+

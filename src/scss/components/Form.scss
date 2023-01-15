@@ -1,0 +1,203 @@
+@import '../variables';
+
+.content {
+  &__form {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-self: start;
+    margin: 0 0 280px;
+    background: $general-white;
+    border-radius: 8px;
+    z-index: 6;
+
+    &_button {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 117%;
+      text-align: center;
+      color: $general-white;
+      height: 64px;
+      background: $general-blue;
+      border-radius: 8px;
+
+      &:hover {
+        color: $hover-yellow;
+      }
+    }
+  }
+
+  &__form_destination {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 117%;
+    color: $text-color;
+    height: 64px;
+    border: 1px solid $variant-color;
+    border-radius: 8px;
+
+    &:hover {
+      border: 3px solid $hover-yellow;
+      border-radius: 8px;
+    }
+    &:focus {
+      border: 3px solid $hover-yellow;
+      border-radius: 8px;
+    }
+  }
+}
+
+.date-item {
+  flex: 0 1 50%;
+  height: 64px;
+  font-size: 15px;
+  line-height: 117%;
+  color: $text-color;
+}
+
+.date-item:hover {
+  border: 3px solid $hover-yellow;
+  border-radius: 8px;
+}
+
+select {
+  appearance: none;
+  outline: none;
+}
+
+.select__wrapper {
+  display: flex;
+  margin-left: 2px;
+}
+.input-wrapper {
+}
+
+.select-item {
+  width: 100%;
+  height: 64px;
+  font-size: 15px;
+  line-height: 117%;
+  color: $text-color;
+}
+
+.select-item:hover {
+  border: 3px solid $hover-yellow;
+  border-radius: 8px;
+}
+.filter {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    padding: 22px;
+    background: $general-white;
+    border-radius: 8px;
+    right: 200px;
+    top: 76px;
+    width: 259px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.item__title {
+  color: $text-color;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.filter__button--adults,
+.filter__button--children,
+.filter__button--rooms {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  font-size: 18px;
+  line-height: 21px;
+  color: $general-blue;
+  border: 1px solid $general-blue;
+  text-align: center;
+  &:disabled {
+    color: $variant-color;
+    border: 1px solid $variant-color;
+    cursor: auto;
+  }
+}
+
+.item__counter--adults,
+.item__counter--children,
+.item__counter--rooms {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 19px;
+  color: $text-color;
+}
+
+.filter__item-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter__additional-content {
+  margin-top: 28px;
+}
+.filter__additional-text {
+  margin-bottom: 12px;
+  color: $text-color;
+  font-size: 12px;
+  line-height: 14px;
+}
+.filter__additional-select {
+  font-family: Roboto, sans-serif;
+  color: var(--text-color);
+  padding: 8px 32px 8px 8px;
+  border: 1px solid $general-blue;
+  margin-bottom: 5px;
+
+  option {
+    font-family: Roboto, sans-serif;
+    color: $text-color;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+.select--wrapper {
+  position: relative;
+}
+.filter__additional-icon {
+  position: absolute;
+  fill: $general-blue;
+  width: 12px;
+  height: 8px;
+  left: 117px;
+  bottom: 38px;
+  z-index: 1;
+}
+.input-wrapper {
+  background-color: $general-white;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: flex;
+}
+.search-icon {
+  display: none;
+}
+
+
+.check-in-text {
+  display: none;
+}
+
+.check-out-text {
+  display: none;
+}

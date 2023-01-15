@@ -1,0 +1,10 @@
+@import "./src/scss/variables";
+
+.icon {
+    width: 9px;
+    height: 21px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

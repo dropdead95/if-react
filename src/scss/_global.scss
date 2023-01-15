@@ -1,0 +1,16 @@
+@import "./variables";
+
+html,
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+.title-section {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 118%;
+  color: $text-color;
+  text-align: center;
+  margin: 0 0 104px;
+}
+

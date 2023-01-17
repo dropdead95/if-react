@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { Container } from '../Container';
-import { HomesSlider } from './HomesSlider';
+import { SliderHomes } from './SliderHomes';
 
-import './Homes.css';
+import '../../scss/components/Homes.scss';
 
-export const Homes = () => {
+export const Homes = ({ hotels }) => {
   return (
     <section className="homes">
       <Container className="homes__container">
-        <h2 className="title-section">Homes guests loves</h2>
-        <HomesSlider />
+        <h2 className="title-section">Homes Guests Loves</h2>
+        <SliderHomes hotels={hotels} />
       </Container>
     </section>
   );

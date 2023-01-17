@@ -1,0 +1,20 @@
+.wrapper {
+  position: relative;
+  margin: 120px auto;
+}
+.text {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+.imgWrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}

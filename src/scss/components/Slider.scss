@@ -1,0 +1,26 @@
+@import 'src/scss/variables';
+
+.slide-image-item {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.slide-title {
+  font-size: 24px;
+  line-height: 117%;
+  color: $general-blue;
+}
+
+.slide-subtitle {
+  font-size: 24px;
+  line-height: 117%;
+  color: $secondary-text;
+}
+.slide {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+

@@ -1,0 +1,39 @@
+@import "./variables";
+
+
+.col-lg-1 {
+  width: $col-width;
+}
+.col-lg-2 {
+  width: $col-width * 2;
+}
+.col-lg-3 {
+  width: $col-width * 3;
+}
+.col-lg-4 {
+  width: $col-width * 4;
+}
+.col-lg-5 {
+  width: $col-width * 5;
+}
+.col-lg-6 {
+  width: $col-width * 6;
+}
+.col-lg-7 {
+  width: $col-width * 7;
+}
+.col-lg-8 {
+  width: $col-width * 8;
+}
+.col-lg-9 {
+  width: $col-width * 9;
+}
+.col-lg-10 {
+  width: $col-width * 10;
+}
+.col-lg-11 {
+  width: $col-width * 11;
+}
+.col-lg-12 {
+  width: $col-width * 12;
+}

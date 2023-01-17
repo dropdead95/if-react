@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.wrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 48%;
+    left: calc(98% - 9px);
+    border-radius: 50%;
+    background-color: $general-white;
+    z-index: 10;
+    cursor: pointer;
+}

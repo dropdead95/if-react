@@ -5,6 +5,7 @@ import { TopSection } from '../TopSection';
 import { Homes } from '../Homes';
 import { AvailableHotels } from '../AvailableHotels';
 
+
 import { data } from '../Homes/homesData';
 import { NotFound } from '../NotFound';
 

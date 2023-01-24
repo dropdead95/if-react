@@ -18,7 +18,7 @@ import {
 //style
 import '../../scss/components/TopSection.scss';
 
-export class TopSection extends React.Component {
+export class TopSectionClass extends React.Component {
   render() {
     return (
       <section
@@ -43,10 +43,10 @@ export class TopSection extends React.Component {
               <span>to live, work or just relax</span>
             </h1>
             <Form
-              value={this.props.value}
-              setValue={this.props.setValue}
-              hotels={this.props.hotels}
-              setAvailableHotels={this.props.setAvailableHotels}
+              getSearch={this.props.getSearch}
+              getAvailableHotels={this.props.getAvailableHotels}
+              availableHotels={this.props.availableHotels}
+              searchValue={this.props.searchValue}
             />
             <div className="content__download">
               <GooglePlay />

@@ -5,7 +5,7 @@ import { SliderAvailable } from './SliderAvailable';
 
 import '../../scss/components/AvailableHotels.scss';
 
-export const AvailableHotels = ({ availableHotels }) => {
+export function AvailableHotels({ availableHotels }) {
   return (
     <section className="available-hotels">
       <Container className="available__container">
@@ -14,4 +14,4 @@ export const AvailableHotels = ({ availableHotels }) => {
       </Container>
     </section>
   );
-};
+}

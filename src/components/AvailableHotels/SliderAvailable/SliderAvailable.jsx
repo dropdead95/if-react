@@ -10,7 +10,7 @@ import './SliderAvailable.scss';
 export const SliderAvailable = ({ availableHotels }) => {
   return (
     <Swiper
-      loop={!(availableHotels.length <= 4)}
+      loop={availableHotels.length > 4}
       slidesPerView={4}
       spaceBetween={16}
       breakpoints={{

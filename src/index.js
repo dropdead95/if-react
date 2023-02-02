@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './scss/index.scss';
-import AppClass from './components/AppClass/AppClass';
+import { App } from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppClass />);
+root.render(<App />);
 
 reportWebVitals();

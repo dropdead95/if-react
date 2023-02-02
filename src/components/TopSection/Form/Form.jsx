@@ -4,35 +4,27 @@ import { SelectDate } from './SelectDate';
 
 import '../../../scss/components/Form.scss';
 
-export const Form = ({
-  value,
-  setValue,
-  setAvailableHotels,
-  hotels
-}) => {
-  const [isClicked, setIsClicked] = React.useState(false);
+import { hotelsAPI } from '../../../API';
+import { AvailableHotelsContext } from '../../../context/AvailableHotelsContext';
 
-  const showCalendar = () => {
-    setIsClicked(true);
-  };
+export const Form = () => {
+  const [value, setValue] = React.useState('');
+
+  const { setAvailableHotels, setIsLoading } = React.useContext(
+    AvailableHotelsContext
+  );
 
   const onInputChange = e => {
     setValue(e.target.value);
   };
 
-  const filteredHotels = () => {
-    const newHotels = hotels.filter(
-      hotel =>
-        hotel.city.toLowerCase().includes(value.toLowerCase()) ||
-        hotel.country.toLowerCase().includes(value.toLowerCase()) ||
-        hotel.name.toLowerCase().includes(value.toLowerCase())
-    );
-    setAvailableHotels(newHotels);
-  };
-
   const handleSubmit = e => {
+    setIsLoading(true);
     e.preventDefault();
-    filteredHotels();
+    hotelsAPI.searchAvailableHotels(value).then(availableHotels => {
+      setAvailableHotels(availableHotels);
+      setIsLoading(false);
+    });
   };
 
   return (
@@ -47,10 +39,7 @@ export const Form = ({
           type="text"
           placeholder="Your destination or hotel name"
         />
-        <SelectDate
-          isClicked={isClicked}
-          showCalendar={showCalendar}
-        />
+        <SelectDate />
         <div className="select__wrapper col-lg-3 col-sm-6">
           <div className="input-wrapper">
             <input

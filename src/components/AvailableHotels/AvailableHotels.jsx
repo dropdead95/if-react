@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Container } from '../Container';
 import { SliderAvailable } from './SliderAvailable';
@@ -7,8 +7,16 @@ import '../../scss/components/AvailableHotels.scss';
 import { CircleLoader } from 'react-spinners';
 
 export function AvailableHotels({ availableHotels, isLoading }) {
+  const availableHotelsRef = React.useRef(null);
+
+  useEffect(() => {
+    availableHotelsRef.current.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }, [availableHotels, isLoading]);
+
   return (
-    <section className="available-hotels">
+    <section ref={availableHotelsRef} className="available-hotels">
       <Container className="available__container">
         <h2 className="title-section">Available Hotels</h2>
         {isLoading ? (

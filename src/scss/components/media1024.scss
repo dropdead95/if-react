@@ -1,0 +1,80 @@
+@import '../variables';
+
+@media (max-width: 1024px) {
+  .col-md-1 {
+    width: $col-width;
+  }
+
+  .col-md-2 {
+    width: $col-width-mobile * 2;
+  }
+
+  .col-md-3 {
+    width: $col-width-mobile * 3;
+  }
+
+  .col-md-4 {
+    width: $col-width-mobile * 4;
+  }
+
+  .col-md-5 {
+    width: $col-width-mobile * 5;
+  }
+
+  .col-md-6 {
+    width: $col-width-mobile * 6;
+  }
+
+  .col-md-7 {
+    width: $col-width-mobile * 7;
+  }
+
+  .col-md-8 {
+    width: $col-width-mobile * 8;
+  }
+
+  .col-md-9 {
+    width: $col-width-mobile * 9;
+  }
+
+  .col-md-10 {
+    width: $col-width-mobile * 10;
+  }
+
+  .col-md-11 {
+    width: $col-width-mobile * 11;
+
+    .col-md-12 {
+      width: $col-width-mobile * 12;
+    }
+
+    .offer__features {
+      row-gap: 32px;
+    }
+
+    .item__img {
+      margin: 0 0 16px;
+    }
+
+    .content__form-subtitle-destination {
+      margin-right: -17px;
+    }
+
+    .cards-item__image-button {
+      min-width: 110px;
+      font-size: 16px;
+    }
+
+    .homes__slider-btn {
+      left: calc(97% - 9px);
+    }
+    .available-hotels__slider-btn {
+      left: calc(97% - 9px);
+    }
+
+    .reviews__slider-btn {
+      top: calc(62% - 287px);
+      left: calc(98% - 22px);
+    }
+  }
+}

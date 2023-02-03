@@ -8,15 +8,8 @@ import { AvailableHotels } from '../AvailableHotels';
 import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
 
 export const App = () => {
-  const avHotelsRef = React.useRef(null);
   const [availableHotels, setAvailableHotels] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-
-  React.useEffect(() => {
-    if (availableHotels.length > 0) {
-      avHotelsRef?.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [availableHotels]);
 
   return (
     <>
@@ -31,7 +24,6 @@ export const App = () => {
         <TopSection />
         {availableHotels.length > 0 && (
           <AvailableHotels
-            ref={avHotelsRef}
             isLoading={isLoading}
             availableHotels={availableHotels}
           />

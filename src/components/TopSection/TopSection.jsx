@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Container } from '../Container';
-import { Menu } from './Menu/Menu';
+import { Menu } from './Menu';
 import { Form } from './Form';
 
 import background from './../../assets/top-section/bg-top-section.jpg';

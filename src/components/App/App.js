@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Sprite } from '../Sprite';
 import { TopSection } from '../TopSection';
@@ -8,8 +8,8 @@ import { AvailableHotels } from '../AvailableHotels';
 import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
 
 export const App = () => {
-  const [availableHotels, setAvailableHotels] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [availableHotels, setAvailableHotels] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>

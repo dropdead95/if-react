@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 
 import { SelectDate } from './SelectDate';
 
@@ -8,9 +8,9 @@ import { hotelsAPI } from '../../../API';
 import { AvailableHotelsContext } from '../../../context/AvailableHotelsContext';
 
 export const Form = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
 
-  const { setAvailableHotels, setIsLoading } = React.useContext(
+  const { setAvailableHotels, setIsLoading } = useContext(
     AvailableHotelsContext
   );
 

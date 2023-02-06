@@ -1,0 +1,431 @@
+@import "../variables";
+
+@media (max-width: 480px) {
+
+  .col-xs-1 {
+    width: $col-width-mobile;
+  }
+
+  .col-xs-2 {
+    width: $col-width-mobile * 2;
+  }
+
+  .col-xs-3 {
+    width: $col-width-mobile * 3;
+  }
+
+  .col-xs-4 {
+    width: $col-width-mobile * 4;
+  }
+
+  .col-xs-5 {
+    width: $col-width-mobile * 5;
+  }
+
+  .col-xs-6 {
+    width: $col-width-mobile * 6;
+  }
+
+  .top-section {
+    &__header {
+      margin: 12px 0 52px;
+    }
+
+    &__content {
+      margin-bottom: 40px;
+    }
+  }
+
+  .header {
+    &__logo_icon {
+      width: 122px;
+      height: 24px;
+    }
+
+    &__account-button {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__night-button {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .menu__burger {
+    width: 26px;
+    height: 16px;
+  }
+
+  .menu-burger-content {
+    padding: 40px;
+  }
+
+  .menu__burger span {
+    width: 24px;
+    height: 3px;
+  }
+
+  .menu__burger span::after {
+    width: 24px;
+    height: 3px;
+    top: 6px;
+  }
+
+  .menu__burger span::before {
+    width: 24px;
+    height: 3px;
+    top: 12px;
+  }
+
+  .content {
+    &__title {
+      font-size: 30px;
+      margin-bottom: 31px;
+    }
+
+    &__form {
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .search-icon {
+    top: 32px;
+  }
+
+  .offer {
+    padding: 24px 0 40px;
+
+    &__title {
+      font-size: 28px;
+      line-height: 117%;
+      color: $text-color;
+      margin: 0 0 32px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .features__subtitle {
+    font-size: 15px;
+    line-height: 117%;
+    color: $text-color;
+  }
+
+  .offer__features {
+    margin: 0;
+    justify-content: center;
+  }
+
+  .item__img {
+    width: 59px;
+    height: 68px;
+  }
+
+  ._title-section {
+    font-size: 28px;
+    margin: 0 0 32px;
+  }
+
+  .homes {
+    &__container {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    &__slide {
+      gap: 0;
+    }
+
+    &__slide-image {
+      margin-bottom: 8px;
+    }
+
+    &__slide-title {
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    &__slide-subtitle {
+      font-size: 12px;
+    }
+
+    &__slider-btn {
+      width: 28px;
+      height: 28px;
+      left: calc(95% - 9px);
+      top: 50%;
+    }
+
+    &__slider-btn-icon {
+      width: 5px;
+      height: 13px;
+    }
+  }
+
+  .available-hotels {
+    &__container {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    &__slide {
+      gap: 0;
+    }
+
+    &__slide-image {
+      margin-bottom: 8px;
+    }
+
+    &__slide-title {
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    &__slide-subtitle {
+      font-size: 12px;
+    }
+
+    &__slider-btn {
+      width: 28px;
+      height: 28px;
+      left: calc(95% - 9px);
+      top: 50%;
+    }
+
+    &__slider-btn-icon {
+      width: 5px;
+      height: 13px;
+    }
+  }
+
+  ._title-section {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 118%;
+    color: $text-color;
+    text-align: center;
+    margin: 0 0 32px;
+  }
+
+  .destinations {
+    &__container {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    &__tabs-item--mobile {
+      display: block;
+    }
+
+    &__tabs-item--desktop {
+      display: none;
+    }
+
+    &__tabs-item {
+      flex-basis: 98px;
+      font-size: 19px;
+      line-height: 117%;
+      background: $general-white;
+      border-radius: 4px;
+      border: 1px solid $stroke-color;
+      padding: 5px 0;
+
+      &:hover {
+        border-radius: 4px;
+      }
+    }
+
+    &__tabs {
+      justify-content: center;
+      gap: 16px;
+      background: none;
+      margin-bottom: 24px;
+    }
+
+    &__cards-item {
+      &:nth-of-type(3) {
+        display: none;
+      }
+
+      &:nth-of-type(4) {
+        display: none;
+      }
+    }
+
+    &__cards-btn {
+      width: 28px;
+      height: 28px;
+      left: calc(90% + 20px);
+      top: 40%;
+      transform: translateY(-40%);
+      z-index: 20;
+    }
+
+    &__cards-btn-icon {
+      width: 4px;
+      height: 13px;
+    }
+  }
+
+  .cards-item {
+    &__title {
+      font-size: 12px;
+    }
+
+    &__image {
+      margin-bottom: 8px;
+    }
+
+    &__image-button {
+      min-width: 100px;
+      font-size: 12px;
+      padding: 13px 0;
+    }
+  }
+
+  .advertisement {
+    order: 6;
+
+    &__content-main-btn {
+      display: none;
+    }
+
+    &__content-main-btn-mobile {
+      display: block;
+      font-size: 14px;
+      line-height: 117%;
+      color: $general-blue;
+    }
+
+    &__content-main-text {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__content-main-desc {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 117%;
+      color: $text-color;
+      flex-basis: 164px;
+    }
+
+    &__content-main-logo {
+      width: 58px;
+      height: 58px;
+    }
+
+    &__content-close-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__content {
+      height: 106px;
+      background-color: $general-white;
+      padding: 0;
+      justify-content: space-between;
+    }
+  }
+
+  .reviews {
+    order: 5;
+    padding: 40px 0;
+    background-color: #eaf0f9;
+
+    &__slide-content {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &__slider-pagination {
+      display: block;
+    }
+
+    &__slider-btn {
+      top: calc(65% - 287px);
+      left: calc(98% - 25px);
+    }
+
+    &__slide-desc {
+      padding-bottom: 32px;
+    }
+
+    &__slider-btn {
+      display: none;
+    }
+  }
+
+  .slide-user-name__country-name {
+    font-size: 15px;
+  }
+
+  .reviews__slide-image_overlay {
+    display: none;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #000;
+  }
+
+  .reviews__slide-title-hotel,
+  .reviews__slide-title-dest,
+  .slide-title-rating__num,
+  .reviews__slide-desc,
+  .slide-user-name__name,
+  .slide-user-name__country-first,
+  .slide-user-name__country-second,
+  .slide-user-name__country-third {
+    font-size: 15px;
+  }
+
+  .slide-title-rating__num {
+    line-height: 133%;
+  }
+
+  .slide-title-rating__quantity {
+    font-size: 12px;
+  }
+
+  .footer {
+    order: 7;
+
+    &__logo_icon {
+      height: 19px;
+    }
+
+    &__copyright {
+      text-align: center;
+      margin: 32px 0 0;
+      font-size: 12px;
+    }
+
+    &__about {
+      padding: 0 9px;
+    }
+
+    &__property {
+      padding: 0 6px 0 7px;
+    }
+
+    &__support {
+      padding: 0 10px;
+    }
+  }
+
+  .link__title {
+    font-size: 15px;
+    line-height: 117%;
+  }
+}
+
+.hide {
+  display: none;
+}

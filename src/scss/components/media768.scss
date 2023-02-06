@@ -1,0 +1,367 @@
+@import "../variables";
+
+@media (max-width: 768px) {
+
+  .col-sm-1 {
+    width: $col-width-mobile;
+  }
+
+  .col-sm-2 {
+    width: $col-width-mobile * 2;
+  }
+
+  .col-sm-3 {
+    width: $col-width-mobile * 3;
+  }
+  .col-sm-4 {
+    width: $col-width-mobile * 4;
+  }
+
+  .col-sm-5 {
+    width: $col-width-mobile * 5;
+  }
+
+  .col-sm-6 {
+    width: $col-width-mobile * 6;
+  }
+
+  .top-section__header {
+    margin-bottom: 100px;
+  }
+
+  .header__account-button {
+    margin: 0 16px 0 0;
+  }
+
+  .menu__burger {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 34px;
+    height: 25px;
+    cursor: pointer;
+    order: 4;
+    z-index: 11;
+  }
+
+  .menu__burger.active span {
+    background-color: transparent;
+  }
+
+  .menu__burger.active span::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .menu__burger.active span::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .menu__burger span {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 0;
+    top: 0;
+    background-color: $general-white;
+  }
+
+  .menu__burger span::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 0;
+    top: 10px;
+    background-color: $general-white;
+  }
+
+  .menu__burger span::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 0;
+    top: 20px;
+    background-color: $general-white;
+  }
+
+  .menu-burger-content {
+    transform: translateX(100%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    padding: 60px;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $general-white;
+    z-index: 10;
+    transition: transform 0.5s;
+
+    &__link {
+      font-size: 20px;
+      color: $general-white;
+
+      &:hover {
+        color: #f5bd41;
+        transition: all 1s;
+      }
+    }
+  }
+
+  .show {
+    transform: translateX(0);
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .content {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__form-subtitle {
+      display: none;
+    }
+
+    &__form {
+      position: relative;
+      flex-direction: column;
+      background-color: $hover-yellow;
+      padding: 16px;
+      gap: 16px;
+      margin-bottom: 100px;
+      border-radius: 0;
+
+      &_destination {
+        padding: 0 0 0 32px;
+        border-radius: 4px;
+
+        &:hover {
+          border: 3px solid $general-white;
+        }
+
+        &::placeholder {
+          color: $text-color;
+        }
+      }
+      &_adults {
+        padding: 10px 0;
+        border-right: 1px solid #383838;
+        border-radius: 4px 0 0 4px;
+      }
+      &_room {
+        border-radius: 0 4px 4px 0;
+        border-left: 1px solid #383838;
+      }
+
+      &_check-in,
+      &_check-out {
+        border-radius: 4px;
+        padding-right: 20px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+
+  .search-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    padding-left: 24px;
+    margin-right: 8px;
+  }
+
+  .check__wrapper {
+    gap: 8px;
+
+  }
+
+  .date-item:hover {
+    border: 3px solid $general-blue;
+  }
+
+  .select-item:hover {
+    border: 3px solid $general-blue;
+    height: 64px;
+  }
+  .select__wrapper {
+
+
+
+  }
+
+  .offer {
+    padding: 80px 0;
+
+    &__features {
+      margin: 60px 0 0;
+      justify-content: center;
+    }
+  }
+
+  .features {
+    &__subtitle {
+      font-size: 20px;
+      line-height: 117%;
+    }
+  }
+
+  ._title-section {
+    margin-bottom: 40px;
+  }
+
+  .homes {
+    &__container {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    &__slider-btn {
+      left: calc(96% - 9px);
+    }
+  }
+
+  .available-hotels {
+    &__container {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    &__slider-btn {
+      left: calc(96% - 9px);
+    }
+  }
+
+  .destinations {
+    &__container {
+      padding-top: 60px;
+      padding-bottom: 120px;
+    }
+
+    &__tabs {
+      margin: 0 auto 40px;
+    }
+  }
+
+  .cards-item__image-button {
+    padding: 8px 0;
+    min-width: 80px;
+    font-size: 14px;
+  }
+
+  .advertisement {
+    &__content {
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__content-main-logo {
+      display: block;
+    }
+
+    &__content-main-logo-icon {
+      width: 58px;
+      height: 58px;
+    }
+
+    &__content-main-image {
+      display: none;
+    }
+
+    &__content-close {
+      align-self: center;
+    }
+
+    &__content-main {
+      align-items: center;
+    }
+  }
+
+  .reviews {
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    &__slide {
+      height: 670px;
+    }
+
+    &__slider-btn {
+      top: calc(65% - 287px);
+      left: calc(98% - 25px);
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__slide-title-wrapper {
+      gap: 8px;
+    }
+
+    &__slide-title {
+      margin-bottom: 12px;
+    }
+
+    &__slide-content {
+      padding-top: 12px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  .footer {
+    padding: 40px 0;
+
+    &__logo_icon {
+      display: block;
+      height: 33px;
+    }
+
+    &__container {
+      align-items: center;
+    }
+
+    &__content {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__about {
+      padding: 0 7px 0 10px;
+    }
+
+    &__property {
+      padding: 0 9px 0 7px;
+    }
+
+    &__support {
+      padding: 0 11px 0 9px;
+    }
+  }
+
+  .link__title {
+    text-decoration: underline;
+  }
+
+  .list__item {
+    display: none;
+  }
+}

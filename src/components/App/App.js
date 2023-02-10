@@ -4,6 +4,7 @@ import { Sprite } from '../Sprite';
 import { TopSection } from '../TopSection';
 import { Homes } from '../Homes';
 import { AvailableHotels } from '../AvailableHotels';
+import { Offer } from '../Offer/Offer';
 
 import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
 
@@ -22,6 +23,7 @@ export const App = () => {
         }}
       >
         <TopSection />
+        <Offer />
         {availableHotels.length > 0 && (
           <AvailableHotels
             isLoading={isLoading}

@@ -43,38 +43,38 @@
 
   .col-md-11 {
     width: $col-width-mobile * 11;
+  }
 
-    .col-md-12 {
-      width: $col-width-mobile * 12;
-    }
+  .col-md-12 {
+    width: $col-width-mobile * 12;
+  }
 
-    .offer__features {
-      row-gap: 32px;
-    }
+  .offer__features {
+    row-gap: 32px;
+  }
 
-    .item__img {
-      margin: 0 0 16px;
-    }
+  .item__img {
+    margin: 0 0 16px;
+  }
 
-    .content__form-subtitle-destination {
-      margin-right: -17px;
-    }
+  .content__form-subtitle-destination {
+    margin-right: -17px;
+  }
 
-    .cards-item__image-button {
-      min-width: 110px;
-      font-size: 16px;
-    }
+  .cards-item__image-button {
+    min-width: 110px;
+    font-size: 16px;
+  }
 
-    .homes__slider-btn {
-      left: calc(97% - 9px);
-    }
-    .available-hotels__slider-btn {
-      left: calc(97% - 9px);
-    }
+  .homes__slider-btn {
+    left: calc(97% - 9px);
+  }
+  .available-hotels__slider-btn {
+    left: calc(97% - 9px);
+  }
 
-    .reviews__slider-btn {
-      top: calc(62% - 287px);
-      left: calc(98% - 22px);
-    }
+  .reviews__slider-btn {
+    top: calc(62% - 287px);
+    left: calc(98% - 22px);
   }
 }

@@ -5,3 +5,7 @@ export * from './SwitchTheme';
 export * from './Search';
 export * from './AppStore';
 export * from './GooglePlay';
+export * from './Book';
+export * from './Support';
+export * from './Communicate';
+export * from './Reviews';

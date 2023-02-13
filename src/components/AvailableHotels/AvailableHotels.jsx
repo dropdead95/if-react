@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import { Container } from '../Container';
 import { SliderAvailable } from './SliderAvailable';

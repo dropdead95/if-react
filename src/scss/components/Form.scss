@@ -155,6 +155,8 @@ select {
   line-height: 14px;
 }
 .filter__additional-select {
+  display: flex;
+  flex-direction: column;
   font-family: Roboto, sans-serif;
   color: var(--text-color);
   padding: 8px 32px 8px 8px;
@@ -192,7 +194,6 @@ select {
 .search-icon {
   display: none;
 }
-
 
 .check-in-text {
   display: none;

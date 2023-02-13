@@ -1,0 +1,55 @@
+@import "../variables";
+
+.offer {
+  padding: 106px 0 122px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: $text-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: $hover-yellow;
+      margin: 20px 0 0;
+    }
+  }
+
+  &__features {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px 0 0;
+  }
+}
+
+.features {
+  &__subtitle {
+    font-size: 24px;
+    line-height: 28px;
+    color: $text-color;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 8px;
+  }
+}
+
+.item__img {
+  fill: $general-blue;
+  width: 100px;
+  height: 100px;
+  margin: 0 0 48px;
+}

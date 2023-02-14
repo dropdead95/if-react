@@ -1,6 +1,7 @@
 @import "../variables";
 
 .available-hotels {
+  border-top: 1px solid $bg-variant;
   background-color: $general-white;
 }
 .available__container {

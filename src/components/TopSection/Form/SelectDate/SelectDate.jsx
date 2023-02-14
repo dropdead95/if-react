@@ -7,7 +7,7 @@ import { CalendarComponent } from '../../../CalendarComponent';
 export const SelectDate = () => {
   const [showCalendar, setShowCalendar] = React.useState(false);
   const [value, onChange] = React.useState(null);
-
+  console.log('render');
   return (
     <>
       <CalendarComponent

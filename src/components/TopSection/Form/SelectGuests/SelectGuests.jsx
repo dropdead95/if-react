@@ -28,13 +28,11 @@ export const SelectGuests = () => {
             children,
             setChildren,
             rooms,
-            setRooms
+            setRooms,
+            isOpen
           }}
         >
-          <Filter
-            isOpen={isOpen}
-            onClickOutside={() => setIsOpen(false)}
-          />
+          <Filter onClickOutside={() => setIsOpen(false)} />
         </GuestsContext.Provider>
       )}
     </>

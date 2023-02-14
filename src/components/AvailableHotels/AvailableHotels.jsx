@@ -1,13 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 
 import { Container } from '../Container';
 import { SliderAvailable } from './SliderAvailable';
 
 import '../../scss/components/AvailableHotels.scss';
 import { CircleLoader } from 'react-spinners';
+import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
 
-export function AvailableHotels({ availableHotels, isLoading }) {
+function AvailableHotels() {
   const availableHotelsRef = useRef(null);
+  const { isLoading, availableHotels } = useContext(
+    AvailableHotelsContext
+  );
 
   useEffect(() => {
     availableHotelsRef.current.scrollIntoView({
@@ -35,3 +39,5 @@ export function AvailableHotels({ availableHotels, isLoading }) {
     </section>
   );
 }
+
+export default AvailableHotels;

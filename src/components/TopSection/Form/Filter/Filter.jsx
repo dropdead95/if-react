@@ -4,7 +4,7 @@ import { GuestsContext } from '../../../../context/GuestsContext';
 
 import '../../../../scss/components/Form.scss';
 
-export const Filter = ({ isOpen, onClickOutside }) => {
+export const Filter = ({ onClickOutside }) => {
   const filterRef = useRef(null);
 
   const {
@@ -13,7 +13,8 @@ export const Filter = ({ isOpen, onClickOutside }) => {
     setRooms,
     adults,
     children,
-    rooms
+    rooms,
+    isOpen
   } = useContext(GuestsContext);
 
   useEffect(() => {

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
 import { Filter } from '../Filter';
 import { GuestsContext } from '../../../../context/GuestsContext';
 
 import './SelectGuests.scss';
 
-export const SelectGuests = () => {
+export const SelectGuests = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
@@ -37,4 +37,6 @@ export const SelectGuests = () => {
       )}
     </>
   );
-};
+});
+
+SelectGuests.displayName = 'SelectGuests';

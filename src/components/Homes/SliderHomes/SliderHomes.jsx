@@ -1,4 +1,5 @@
 import React from 'react';
+import { array, bool } from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SliderButton } from '../../UI';
@@ -71,4 +72,9 @@ export const SliderHomes = ({ isLoading, hotels }) => {
       )}
     </>
   );
+};
+
+SliderHomes.propTypes = {
+  isLoading: bool,
+  hotels: array
 };

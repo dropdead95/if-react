@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { string, bool, func } from 'prop-types';
 import Calendar from 'react-calendar';
 
 export const CalendarComponent = ({
@@ -39,4 +40,11 @@ export const CalendarComponent = ({
       />
     </div>
   );
+};
+
+CalendarComponent.propTypes = {
+  showCalendar: bool,
+  value: string,
+  onChange: func,
+  onClickOutside: func
 };

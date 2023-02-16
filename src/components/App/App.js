@@ -28,7 +28,6 @@ export const App = () => {
         }}
       >
         <TopSection />
-        <Offer />
         <Suspense
           fallback={
             <CircleLoader
@@ -43,6 +42,7 @@ export const App = () => {
         >
           {availableHotels.length > 0 && <AvailableHotels />}
         </Suspense>
+        <Offer />
       </AvailableHotelsContext.Provider>
       <Homes />
     </>

@@ -3,29 +3,31 @@ import React, { useState, useContext } from 'react';
 import { SelectDate } from './SelectDate';
 import { SelectGuests } from './SelectGuests';
 
-import { hotelsAPI } from '../../../API';
+// import { hotelsAPI } from '../../../API';
 import { AvailableHotelsContext } from '../../../context/AvailableHotelsContext';
 
 import '../../../scss/components/Form.scss';
+import { fetchData, wrapPromise } from '../../../utils/wrapPromise';
+import { hotelsAPI } from '../../../API';
 
 export const Form = () => {
   const [value, setValue] = useState('');
+  const availableHotels = wrapPromise(fetchData('hotels', value));
 
-  const { setAvailableHotels, setIsLoading } = useContext(
-    AvailableHotelsContext
-  );
+  const { setAvailableHotels } = useContext(AvailableHotelsContext);
 
   const onInputChange = e => {
     setValue(e.target.value);
   };
 
   const handleSubmit = e => {
-    setIsLoading(true);
+    // setIsLoading(true);
     e.preventDefault();
-    hotelsAPI.searchAvailableHotels(value).then(availableHotels => {
+    hotelsAPI.searchAvailableHotels(value).then(() => {
       setAvailableHotels(availableHotels);
-      setIsLoading(false);
     });
+
+    // setIsLoading(false);
   };
 
   return (

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './SelectDate.scss';
 
 import { CalendarComponent } from '../../../CalendarComponent';
 
-export const SelectDate = () => {
+export const SelectDate = memo(() => {
   const [showCalendar, setShowCalendar] = React.useState(false);
   const [value, onChange] = React.useState(null);
-  console.log('render');
+
   return (
     <>
       <CalendarComponent
@@ -36,4 +36,6 @@ export const SelectDate = () => {
       </div>
     </>
   );
-};
+});
+
+SelectDate.displayName = 'SelectDate';

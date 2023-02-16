@@ -1,40 +1,35 @@
-import React, { useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 import { SelectDate } from './SelectDate';
 import { SelectGuests } from './SelectGuests';
 
-// import { hotelsAPI } from '../../../API';
-import { AvailableHotelsContext } from '../../../context/AvailableHotelsContext';
-
 import '../../../scss/components/Form.scss';
-import { fetchData, wrapPromise } from '../../../utils/wrapPromise';
-import { hotelsAPI } from '../../../API';
+import { AppContext } from '../../App/App';
+
+export const FormContext = createContext();
 
 export const Form = () => {
-  const [value, setValue] = useState('');
-  const availableHotels = wrapPromise(fetchData('hotels', value));
-
-  const { setAvailableHotels } = useContext(AvailableHotelsContext);
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedDate, onChange] = React.useState(null);
+  const [adults, setAdults] = useState(2);
+  const [kids, setKids] = useState(0);
+  const [rooms, setRooms] = useState(1);
+  const { setContext } = useContext(AppContext);
 
   const onInputChange = e => {
-    setValue(e.target.value);
+    setSearchValue(e.target.value);
   };
 
   const handleSubmit = e => {
-    // setIsLoading(true);
     e.preventDefault();
-    hotelsAPI.searchAvailableHotels(value).then(() => {
-      setAvailableHotels(availableHotels);
-    });
-
-    // setIsLoading(false);
+    setContext({ searchValue, selectedDate, adults, kids, rooms });
   };
 
   return (
     <>
       <form className="content__form" onSubmit={handleSubmit}>
         <input
-          value={value}
+          value={searchValue}
           onChange={onInputChange}
           className="content__form_destination col-lg-5 col-sm-6"
           id="destination"
@@ -42,8 +37,21 @@ export const Form = () => {
           type="text"
           placeholder="Your destination or hotel name"
         />
-        <SelectDate />
-        <SelectGuests />
+        <FormContext.Provider
+          value={{
+            selectedDate,
+            onChange,
+            adults,
+            setAdults,
+            kids,
+            setKids,
+            rooms,
+            setRooms
+          }}
+        >
+          <SelectDate />
+          <SelectGuests />
+        </FormContext.Provider>
         <button
           className="content__form_button col-lg-2 col-sm-6"
           type="submit"

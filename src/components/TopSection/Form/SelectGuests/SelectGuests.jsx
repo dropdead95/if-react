@@ -1,15 +1,17 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useContext } from 'react';
 
 import { Filter } from '../Filter';
 import { GuestsContext } from '../../../../context/GuestsContext';
 
 import './SelectGuests.scss';
+import { FormContext } from '../Form';
 
 export const SelectGuests = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
-  const [adults, setAdults] = useState(2);
-  const [children, setChildren] = useState(0);
-  const [rooms, setRooms] = useState(1);
+
+  const { adults, setAdults, kids, setKids, rooms, setRooms } =
+    useContext(FormContext);
+
   return (
     <>
       <div
@@ -17,7 +19,7 @@ export const SelectGuests = memo(() => {
         className="guests__wrapper"
       >
         <p className="guests__text">
-          {adults} Adults — {children} Children — {rooms} Room
+          {adults} Adults — {kids} Children — {rooms} Room
         </p>
       </div>
       {isOpen && (
@@ -25,8 +27,8 @@ export const SelectGuests = memo(() => {
           value={{
             adults,
             setAdults,
-            children,
-            setChildren,
+            kids,
+            setKids,
             rooms,
             setRooms,
             isOpen

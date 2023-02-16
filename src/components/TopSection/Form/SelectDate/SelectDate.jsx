@@ -1,18 +1,19 @@
-import React, { memo } from 'react';
+import React, { memo, useContext, useState } from 'react';
 
 import './SelectDate.scss';
 
 import { CalendarComponent } from '../../../CalendarComponent';
+import { FormContext } from '../Form';
 
 export const SelectDate = memo(() => {
-  const [showCalendar, setShowCalendar] = React.useState(false);
-  const [value, onChange] = React.useState(null);
+  const [showCalendar, setShowCalendar] = useState(false);
+  const { selectedDate, onChange } = useContext(FormContext);
 
   return (
     <>
       <CalendarComponent
         showCalendar={showCalendar}
-        value={value}
+        value={selectedDate}
         onChange={onChange}
         onClickOutside={() => setShowCalendar(false)}
       />
@@ -22,14 +23,14 @@ export const SelectDate = memo(() => {
       >
         <p className="check__text">
           <span>
-            {value
-              ? value[0].toLocaleString().slice(0, 10)
+            {selectedDate
+              ? selectedDate[0].toLocaleString().slice(0, 10)
               : 'Check-in'}
           </span>
           -
           <span>
-            {value
-              ? value[1].toLocaleString().slice(0, 10)
+            {selectedDate
+              ? selectedDate[1].toLocaleString().slice(0, 10)
               : 'Check-out'}
           </span>
         </p>

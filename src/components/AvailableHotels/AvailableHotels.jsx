@@ -1,17 +1,43 @@
-import React, { useRef, useEffect, useContext } from 'react';
+import React, {
+  useRef,
+  useEffect,
+  useContext,
+  useState
+} from 'react';
+import { CircleLoader } from 'react-spinners';
 
 import { Container } from '../Container';
 import { SliderAvailable } from './SliderAvailable';
 
+import { fetchData, wrapPromise } from '../../utils/wrapPromise';
+
 import '../../scss/components/AvailableHotels.scss';
-import { CircleLoader } from 'react-spinners';
-import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
+
+import { AppContext } from '../App/App';
+import { hotelsAPI } from '../../API';
 
 function AvailableHotels() {
   const availableHotelsRef = useRef(null);
-  const { isLoading, availableHotels } = useContext(
-    AvailableHotelsContext
+  const [availableHotels, setAvailableHotels] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { context } = useContext(AppContext);
+  const availableHotelsRequest = wrapPromise(
+    fetchData('hotels', context.searchValue)
   );
+
+  useEffect(() => {
+    setIsLoading(true);
+    hotelsAPI.searchAvailableHotels(context.searchValue).then(() => {
+      setAvailableHotels(availableHotelsRequest);
+      setIsLoading(false);
+    });
+  }, [
+    context.searchValue,
+    context.adults,
+    context.selectedDate,
+    context.kids,
+    context.rooms
+  ]);
 
   useEffect(() => {
     availableHotelsRef.current.scrollIntoView({
@@ -33,7 +59,9 @@ function AvailableHotels() {
             size="100px"
           />
         ) : (
-          <SliderAvailable availableHotels={availableHotels} />
+          <SliderAvailable
+            availableHotels={availableHotelsRequest}
+          />
         )}
       </Container>
     </section>

@@ -1,30 +1,24 @@
-import React, { useState, Suspense } from 'react';
+import React, { createContext, Suspense, useState } from 'react';
 import { CircleLoader } from 'react-spinners';
 
 import { Sprite } from '../Sprite';
 import { TopSection } from '../TopSection';
 import { Homes } from '../Homes';
 import { Offer } from '../Offer/Offer';
+import AvailableHotels from '../AvailableHotels/AvailableHotels';
 
-const AvailableHotels = React.lazy(() =>
-  import('../AvailableHotels/AvailableHotels')
-);
-
-import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
+export const AppContext = createContext();
 
 export const App = () => {
-  const [availableHotels, setAvailableHotels] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [context, setContext] = useState({});
 
   return (
     <>
       <Sprite />
-      <AvailableHotelsContext.Provider
+      <AppContext.Provider
         value={{
-          availableHotels,
-          setAvailableHotels,
-          setIsLoading,
-          isLoading
+          context,
+          setContext
         }}
       >
         <TopSection />
@@ -40,10 +34,11 @@ export const App = () => {
             />
           }
         >
-          {availableHotels.length > 0 && <AvailableHotels />}
+          {context.searchValue && <AvailableHotels />}
         </Suspense>
-        <Offer />
-      </AvailableHotelsContext.Provider>
+      </AppContext.Provider>
+
+      <Offer />
       <Homes />
     </>
   );

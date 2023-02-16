@@ -9,10 +9,10 @@ export const Filter = ({ onClickOutside }) => {
 
   const {
     setAdults,
-    setChildren,
+    setKids,
     setRooms,
     adults,
-    children,
+    kids,
     rooms,
     isOpen
   } = useContext(GuestsContext);
@@ -73,8 +73,8 @@ export const Filter = ({ onClickOutside }) => {
         <div className="filter__item-counter">
           <button
             type="button"
-            disabled={children === 0}
-            onClick={() => setChildren(prevState => prevState - 1)}
+            disabled={kids === 0}
+            onClick={() => setKids(prevState => prevState - 1)}
             className="filter__button--children filter__button--dec filter__button--children--dec"
           >
             -
@@ -82,15 +82,15 @@ export const Filter = ({ onClickOutside }) => {
           <div className="filter__input-wrapper">
             <input
               className="item__counter--children"
-              value={children}
+              value={kids}
               type="text"
               disabled="disabled"
             />
           </div>
           <button
             type="button"
-            disabled={children === 10}
-            onClick={() => setChildren(prevState => prevState + 1)}
+            disabled={kids === 10}
+            onClick={() => setKids(prevState => prevState + 1)}
             className="filter__button--children filter__button--inc filter__button--children--inc"
           >
             +
@@ -126,12 +126,12 @@ export const Filter = ({ onClickOutside }) => {
           </button>
         </div>
       </div>
-      {children > 0 && (
+      {kids > 0 && (
         <div className="filter__additional-content">
           <p className="filter__additional-text">
             What is the age of the child you’re travelling with?
           </p>
-          {new Array(children).fill(0).map((item, i) => (
+          {new Array(kids).fill(0).map((item, i) => (
             <select className="filter__additional-select" key={i}>
               {new Array(18).fill(0).map((item, indexOption) => (
                 <option key={indexOption}>

@@ -1,16 +1,22 @@
-import React, { createContext, Suspense, useState } from 'react';
-import { CircleLoader } from 'react-spinners';
+import React, {
+  createContext,
+  useState,
+  Suspense,
+  useRef
+} from 'react';
 
 import { Sprite } from '../Sprite';
 import { TopSection } from '../TopSection';
 import { Homes } from '../Homes';
 import { Offer } from '../Offer/Offer';
-import AvailableHotels from '../AvailableHotels/AvailableHotels';
+import { AvailableHotels } from '../AvailableHotels';
+import { CircleLoader } from 'react-spinners';
 
 export const AppContext = createContext();
 
 export const App = () => {
   const [context, setContext] = useState({});
+  const availableHotelsRef = useRef(null);
 
   return (
     <>
@@ -18,7 +24,8 @@ export const App = () => {
       <AppContext.Provider
         value={{
           context,
-          setContext
+          setContext,
+          availableHotelsRef
         }}
       >
         <TopSection />
@@ -34,7 +41,9 @@ export const App = () => {
             />
           }
         >
-          {context.searchValue && <AvailableHotels />}
+          {context.searchValue && (
+            <AvailableHotels ref={availableHotelsRef} />
+          )}
         </Suspense>
       </AppContext.Provider>
 

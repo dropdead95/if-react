@@ -14,7 +14,7 @@ export const Form = () => {
   const [adults, setAdults] = useState(2);
   const [kids, setKids] = useState(0);
   const [rooms, setRooms] = useState(1);
-  const { setContext } = useContext(AppContext);
+  const { setContext, availableHotelsRef } = useContext(AppContext);
 
   const onInputChange = e => {
     setSearchValue(e.target.value);
@@ -22,7 +22,11 @@ export const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     setContext({ searchValue, selectedDate, adults, kids, rooms });
+    availableHotelsRef.current.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
 
   return (

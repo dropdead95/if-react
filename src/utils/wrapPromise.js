@@ -19,6 +19,7 @@ async function getData(url, searchValue) {
 
 export const wrapPromise = promise => {
   if (promise.status === 'fulfilled') {
+    cache.clear();
     return promise.value;
   } else if (promise.status === 'rejected') {
     throw promise.reason;

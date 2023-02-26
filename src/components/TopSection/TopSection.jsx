@@ -1,22 +1,16 @@
 import React from 'react';
 
 import { Container } from '../Container';
-import { Menu } from './Menu';
 import { Form } from './Form';
 
 import background from './../../assets/top-section/bg-top-section.jpg';
 
 //icons
-import {
-  AppStore,
-  GooglePlay,
-  Logo,
-  Profile,
-  SwitchTheme
-} from '../../icons';
+import { AppStore, GooglePlay } from '../../icons';
 
 //style
 import '../../scss/components/TopSection.scss';
+import { Header } from '../Header';
 
 export const TopSection = () => {
   return (
@@ -30,12 +24,7 @@ export const TopSection = () => {
       }}
     >
       <Container className="top-section__container">
-        <div className="top-section__header">
-          <Logo />
-          <Menu />
-          <SwitchTheme />
-          <Profile />
-        </div>
+        <Header />
         <div className="top-section__content">
           <h1 className="content__title">
             <span>Discover stays</span>{' '}

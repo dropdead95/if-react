@@ -16,5 +16,9 @@ export const hotelsAPI = {
       }
     });
     return availableHotels;
+  },
+  async getHotel(id) {
+    const { data: hotel } = await instance.get(`hotels/${id}`);
+    return hotel;
   }
 };

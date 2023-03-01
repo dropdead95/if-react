@@ -1,17 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import debounce from 'lodash.debounce';
 
 import styles from './AuthPage.module.scss';
 
 import background from '../../assets/top-section/bg-top-section.jpg';
 
 import { Container } from '../../components/Container';
-import { AppContext } from '../../components/App/App';
 
 export const AuthPage = () => {
-  const { setIsAuth } = useContext(AppContext);
+  const [login, setLogin] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [user, setUser] = useState(null);
+  console.log(user);
 
-  const handleSubmit = () => {
-    setIsAuth(true);
+  if (user) {
+    return <Navigate to="/" />;
+  }
+
+  const handleLoginChange = e => {
+    setLogin(e.target.value);
+  };
+
+  const handleLoginDebouncedChange = useCallback(
+    debounce(handleLoginChange, 500),
+    []
+  );
+
+  const handlePasswordChange = e => {
+    setPassword(e.target.value);
+  };
+  const handlePasswordDebouncedChange = useCallback(
+    debounce(handlePasswordChange, 500),
+    []
+  );
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setUser({ login, password });
   };
 
   return (
@@ -30,12 +56,20 @@ export const AuthPage = () => {
           <label className={styles.label} htmlFor="login">
             Login
           </label>
-          <input className={styles.input} id="login" type="text" />
+          <input
+            onChange={handleLoginDebouncedChange}
+            className={styles.input}
+            required
+            id="login"
+            type="text"
+          />
           <label className={styles.label} htmlFor="password">
             Password
           </label>
           <input
+            onChange={handlePasswordDebouncedChange}
             className={styles.input}
+            required
             id="password"
             type="password"
           />

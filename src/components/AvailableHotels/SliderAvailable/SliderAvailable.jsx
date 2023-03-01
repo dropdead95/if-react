@@ -1,4 +1,5 @@
 import React from 'react';
+import { array } from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SliderButton } from '../../UI';
@@ -45,4 +46,8 @@ export const SliderAvailable = ({ availableHotels }) => {
       </>
     </Swiper>
   );
+};
+
+SliderAvailable.propTypes = {
+  availableHotels: array
 };

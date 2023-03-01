@@ -1,36 +1,53 @@
-import React, { useState } from 'react';
+import React, {
+  createContext,
+  useState,
+  Suspense,
+  useRef
+} from 'react';
 
 import { Sprite } from '../Sprite';
 import { TopSection } from '../TopSection';
 import { Homes } from '../Homes';
-import { AvailableHotels } from '../AvailableHotels';
 import { Offer } from '../Offer/Offer';
+import { AvailableHotels } from '../AvailableHotels';
+import { CircleLoader } from 'react-spinners';
 
-import { AvailableHotelsContext } from '../../context/AvailableHotelsContext';
+export const AppContext = createContext();
 
 export const App = () => {
-  const [availableHotels, setAvailableHotels] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [context, setContext] = useState({});
+  const availableHotelsRef = useRef(null);
 
   return (
     <>
       <Sprite />
-      <AvailableHotelsContext.Provider
+      <AppContext.Provider
         value={{
-          availableHotels,
-          setAvailableHotels,
-          setIsLoading
+          context,
+          setContext,
+          availableHotelsRef
         }}
       >
         <TopSection />
-        <Offer />
-        {availableHotels.length > 0 && (
-          <AvailableHotels
-            isLoading={isLoading}
-            availableHotels={availableHotels}
-          />
-        )}
-      </AvailableHotelsContext.Provider>
+        <Suspense
+          fallback={
+            <CircleLoader
+              color="#1a71f4"
+              cssOverride={{
+                display: 'block',
+                margin: '20% auto'
+              }}
+              size="100px"
+            />
+          }
+        >
+          {context.searchValue && (
+            <AvailableHotels ref={availableHotelsRef} />
+          )}
+        </Suspense>
+      </AppContext.Provider>
+
+      <Offer />
       <Homes />
     </>
   );

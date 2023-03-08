@@ -1,11 +1,14 @@
 import React from 'react';
 
-import style from './Profile.module.scss';
+import styles from './Profile.module.scss';
+import { NavLink } from 'react-router-dom';
 
 export const Profile = () => {
   return (
-    <svg className={style.icon}>
-      <use href="#account-icon"></use>
-    </svg>
+    <NavLink to="sign-in" className={styles.active}>
+      <svg className={styles.icon}>
+        <use href="#account-icon"></use>
+      </svg>
+    </NavLink>
   );
 };

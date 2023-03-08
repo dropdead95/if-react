@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+.hotel-header {
+  padding: 30px 0;
+  margin: 0;
+  background-color: $bg-blue;
+}
+.content {
+  margin-top: 50px;
+  display: flex;
+}
+.desc {
+  margin-left: 50px;
+}
+.title {
+  font-size: 44px;
+  line-height: 38px;
+  color: $general-blue;
+  margin-bottom: 50px;
+}
+.image {
+  width: 50%;
+  object-fit: cover;
+}
+.city {
+  font-size: 24px;
+  line-height: 28px;
+  color: $bg-blue;
+  margin-bottom: 20px;
+}
+.country {
+  font-size: 24px;
+  line-height: 28px;
+  color: $bg-blue;
+}

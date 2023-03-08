@@ -20,19 +20,11 @@
     flex-direction: column;
   }
 
-  &__header {
-    display: flex;
-    align-items: center;
-    min-height: 48px;
-    margin: 51px 0 196px;
-    z-index: 5;
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 131px;
+    margin: 196px 0 131px;
     z-index: 4;
   }
 }

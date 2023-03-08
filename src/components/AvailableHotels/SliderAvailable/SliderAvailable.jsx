@@ -1,6 +1,7 @@
 import React from 'react';
 import { array } from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { NavLink } from 'react-router-dom';
 
 import { SliderButton } from '../../UI';
 
@@ -27,20 +28,20 @@ export const SliderAvailable = ({ availableHotels }) => {
 
       <>
         {availableHotels.map(hotel => (
-          <SwiperSlide className="slide" key={hotel.id}>
-            <div className="slide-image">
-              <img
-                className={'slide-image-item'}
-                src={hotel.imageUrl}
-                alt={hotel.name}
-              />
-            </div>
-            <a href="#" className="slide-title">
-              {hotel.name}
-            </a>
-            <h3 className="slide-subtitle">
-              {hotel.city}, {hotel.country}
-            </h3>
+          <SwiperSlide key={hotel.id}>
+            <NavLink className="slide" to={`hotels/${hotel.id}`}>
+              <div className="slide-image">
+                <img
+                  className={'slide-image-item'}
+                  src={hotel.imageUrl}
+                  alt={hotel.name}
+                />
+              </div>
+              <p className="slide-title">{hotel.name}</p>
+              <h3 className="slide-subtitle">
+                {hotel.city}, {hotel.country}
+              </h3>
+            </NavLink>
           </SwiperSlide>
         ))}
       </>

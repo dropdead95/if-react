@@ -8,10 +8,10 @@ import { fetchData, wrapPromise } from '../../utils/wrapPromise';
 
 import '../../scss/components/AvailableHotels.scss';
 
-import { AppContext } from '../App/App';
+import { SystemLayoutContext } from '../../pages/SystemLayout';
 
 export const AvailableHotels = forwardRef((props, ref) => {
-  const { context } = useContext(AppContext);
+  const { context } = useContext(SystemLayoutContext);
 
   const availableHotelsRequest = wrapPromise(
     fetchData('hotels', context.searchValue)

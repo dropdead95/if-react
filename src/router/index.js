@@ -9,6 +9,7 @@ import { App } from '../components/App/App';
 import { HotelPage } from '../pages/HotelPage';
 import { LayoutPage } from '../components/LayoutPage';
 import { AuthPage } from '../pages/AuthPage';
+// фывфыв
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

@@ -1,0 +1,56 @@
+@import 'src/scss/variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 400px;
+  height: 364px;
+  padding: 36px 40px;
+  background-color: $general-white;
+}
+.title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 40px;
+}
+.auth {
+  min-height: 100vh;
+  padding-top: 150px;
+
+}
+.label {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  margin-bottom: 8px;
+}
+.input {
+  padding: 0 15px;
+  width: 100%;
+  height: 41px;
+  background: #ffffff;
+  border: 2px solid #cecece;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 19px;
+  &:last-child {
+    margin-bottom: 24px;
+  }
+}
+.btn {
+  text-align: center;
+  padding: 12px 0;
+  width: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: $general-white;
+  background: $general-blue;
+  border-radius: 8px;
+}

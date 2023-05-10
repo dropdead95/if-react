@@ -1,20 +1,25 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {
+  createContext,
+  forwardRef,
+  useContext,
+  useState
+} from 'react';
 
 import { SelectDate } from './SelectDate';
 import { SelectGuests } from './SelectGuests';
 
 import '../../../scss/components/Form.scss';
-import { AppContext } from '../../App/App';
+import { SystemLayoutContext } from '../../../pages/SystemLayout';
 
 export const FormContext = createContext();
 
-export const Form = () => {
+export const Form = forwardRef((props, ref) => {
   const [searchValue, setSearchValue] = useState('');
   const [selectedDate, onChange] = React.useState(null);
   const [adults, setAdults] = useState(2);
   const [kids, setKids] = useState(0);
   const [rooms, setRooms] = useState(1);
-  const { setContext, availableHotelsRef } = useContext(AppContext);
+  const { setContext } = useContext(SystemLayoutContext);
 
   const onInputChange = e => {
     setSearchValue(e.target.value);
@@ -22,9 +27,16 @@ export const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    setContext({ searchValue, selectedDate, adults, kids, rooms });
-    availableHotelsRef.current.scrollIntoView({
+    setContext(prevContext => ({
+      ...prevContext,
+      searchValue,
+      selectedDate,
+      adults,
+      kids,
+      rooms
+    }));
+    window.scrollTo({
+      top: ref.current.getBoundingClientRect().height,
       behavior: 'smooth'
     });
   };
@@ -65,4 +77,6 @@ export const Form = () => {
       </form>
     </>
   );
-};
+});
+
+Form.displayName = 'Form';

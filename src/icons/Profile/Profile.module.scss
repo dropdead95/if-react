@@ -1,7 +1,17 @@
-@import "./src/scss/variables";
+@import './src/scss/variables';
 
 .icon {
   fill: $general-white;
   width: 40px;
   height: 40px;
+}
+.active {
+  position: relative;
+  color: $hover-yellow;
+}
+
+@media (max-width: 768px) {
+  .icon {
+    margin: 0 16px 0 0;
+  }
 }

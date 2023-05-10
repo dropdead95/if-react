@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Container } from '../Container';
-import { Menu } from './Menu';
 import { Form } from './Form';
 
 import background from './../../assets/top-section/bg-top-section.jpg';
 
 //icons
-import {
-  AppStore,
-  GooglePlay,
-  Logo,
-  Profile,
-  SwitchTheme
-} from '../../icons';
+import { AppStore, GooglePlay } from '../../icons';
 
 //style
 import '../../scss/components/TopSection.scss';
+import { Header } from '../Header';
 
 export const TopSection = () => {
+  const topSectionRef = useRef(null);
+
   return (
     <section
+      ref={topSectionRef}
       className="top-section"
       style={{
         backgroundImage: `url(${background})`,
@@ -30,18 +27,13 @@ export const TopSection = () => {
       }}
     >
       <Container className="top-section__container">
-        <div className="top-section__header">
-          <Logo />
-          <Menu />
-          <SwitchTheme />
-          <Profile />
-        </div>
+        <Header />
         <div className="top-section__content">
           <h1 className="content__title">
             <span>Discover stays</span>{' '}
             <span>to live, work or just relax</span>
           </h1>
-          <Form />
+          <Form ref={topSectionRef} />
           <div className="content__download">
             <GooglePlay />
             <AppStore />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { array, bool } from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { NavLink } from 'react-router-dom';
 
 import { SliderButton } from '../../UI';
 import { Skeleton } from '../../UI/Skeleton';
@@ -9,6 +10,7 @@ import 'swiper/swiper.min.css';
 import './SliderHomes.scss';
 
 export const SliderHomes = ({ isLoading, hotels }) => {
+  console.log(hotels);
   return (
     <>
       {isLoading ? (
@@ -51,20 +53,20 @@ export const SliderHomes = ({ isLoading, hotels }) => {
           <SliderButton />
           <>
             {hotels.map(({ id, imageUrl, name, city, country }) => (
-              <SwiperSlide className="slide" key={id}>
-                <div className="slide-image">
-                  <img
-                    className={'slide-image-item'}
-                    src={imageUrl}
-                    alt={name}
-                  />
-                </div>
-                <a href="#" className="slide-title">
-                  {name}
-                </a>
-                <h3 className="slide-subtitle">
-                  {city}, {country}
-                </h3>
+              <SwiperSlide key={id}>
+                <NavLink className="slide" to={`hotels/${id}`}>
+                  <div className="slide-image">
+                    <img
+                      className={'slide-image-item'}
+                      src={imageUrl}
+                      alt={name}
+                    />
+                  </div>
+                  <div className="slide-title">{name}</div>
+                  <h3 className="slide-subtitle">
+                    {city}, {country}
+                  </h3>
+                </NavLink>
               </SwiperSlide>
             ))}
           </>

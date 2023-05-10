@@ -9,7 +9,7 @@ import { SelectDate } from './SelectDate';
 import { SelectGuests } from './SelectGuests';
 
 import '../../../scss/components/Form.scss';
-import { AppContext } from '../../App/App';
+import { SystemLayoutContext } from '../../../pages/SystemLayout';
 
 export const FormContext = createContext();
 
@@ -19,7 +19,7 @@ export const Form = forwardRef((props, ref) => {
   const [adults, setAdults] = useState(2);
   const [kids, setKids] = useState(0);
   const [rooms, setRooms] = useState(1);
-  const { setContext } = useContext(AppContext);
+  const { setContext } = useContext(SystemLayoutContext);
 
   const onInputChange = e => {
     setSearchValue(e.target.value);
@@ -27,7 +27,14 @@ export const Form = forwardRef((props, ref) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setContext({ searchValue, selectedDate, adults, kids, rooms });
+    setContext(prevContext => ({
+      ...prevContext,
+      searchValue,
+      selectedDate,
+      adults,
+      kids,
+      rooms
+    }));
     window.scrollTo({
       top: ref.current.getBoundingClientRect().height,
       behavior: 'smooth'

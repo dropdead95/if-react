@@ -7,6 +7,7 @@ import { Menu } from '../TopSection/Menu';
 import styles from './Header.module.scss';
 
 import { NavLink } from 'react-router-dom';
+import { SignOut } from '../SignOut';
 
 export const Header = ({ className }) => {
   return (
@@ -18,6 +19,7 @@ export const Header = ({ className }) => {
         <Menu />
         <SwitchTheme />
         <Profile />
+        <SignOut />
       </Container>
     </header>
   );

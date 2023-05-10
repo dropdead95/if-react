@@ -1,7 +1,8 @@
 import React, {
   createContext,
-  useState,
   Suspense,
+  useContext,
+  useEffect,
   useRef
 } from 'react';
 
@@ -11,19 +12,25 @@ import { TopSection } from '../TopSection';
 import { Homes } from '../Homes';
 import { Offer } from '../Offer/Offer';
 import { AvailableHotels } from '../AvailableHotels';
+import { SystemLayoutContext } from '../../pages/SystemLayout';
+import { useNavigate } from 'react-router-dom';
 
-export const AppContext = createContext();
+const AppContext = createContext();
 
 export const App = () => {
-  const [context, setContext] = useState({});
-
+  const { context } = useContext(SystemLayoutContext);
+  const navigate = useNavigate();
   const availableHotelsRef = useRef(null);
+
+  useEffect(() => {
+    if (!context.user) {
+      navigate('sign-in');
+    }
+  }, [context.user]);
 
   return (
     <AppContext.Provider
       value={{
-        context,
-        setContext,
         availableHotelsRef
       }}
     >

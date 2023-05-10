@@ -8,6 +8,7 @@ import { Skeleton } from '../../UI/Skeleton';
 
 import 'swiper/swiper.min.css';
 import './SliderHomes.scss';
+// dsf
 
 export const SliderHomes = ({ isLoading, hotels }) => {
   console.log(hotels);
